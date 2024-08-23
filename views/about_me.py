@@ -71,3 +71,34 @@ st.write(
     - **Version control:** Git, GitHub
     """
 )
+
+# --- EDUCATION ---
+st.write("\n")
+st.subheader("Education")
+st.write(
+    """
+    - **Bachelor's degree in Economics** - Pontifical Catholic University of Peru (PUCP)
+    - **Data Science and Machine Learning Bootcamp** - Ironhack
+    """
+)
+
+# --- EXPERIENCE ---
+st.write("\n")
+st.subheader("Experience")
+st.write(
+    """
+    - **Junior Data Scientist and Research Assistant** - PUCP
+    - **Data Analyst Intern** - Ironhack
+    - **Economic Research Assistant** - PUCP
+    """
+)
+
+# --- PROJECTS ---
+st.write("\n")
+st.subheader("Projects")
+st.write(
+    """
+    - **Sales dashboard:** A dashboard that visualizes sales data using Streamlit and Plotly.
+    - **Chatbot:** A chatbot that answers questions about COVID-19 using the Rasa framework.
+    """
+)
