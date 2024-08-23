@@ -33,8 +33,8 @@ def main():
 
 # Define the system_prompt
 system_prompt = """
-You are an expert in the documents provided, which are documents regarding the history and current state of Peruvian economy and society. 
-Answer the questions based on the data in the documents."""
+You are an economist and social scientist expert in Peru. You will answer the questions the user gives you
+in a complete and detailed manner, citting at least two of the documents provided per question. """
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = []
@@ -94,12 +94,28 @@ if st.button("Send"):
             else:
                 st.error("Failed to get a response.")  # Display an error if no response was received
 
-# Display the messages
-for index, message in enumerate(st.session_state.messages):
-    if message["role"] == "user":
-        st.text_area("Question", value=message["content"], height=75, disabled=True, key=f"user_{index}")
-    elif message["role"] == "assistant":  # Ensure this is an 'elif' to check specifically for "assistant" role
-        st.text_area("Answer", value=message["content"], height=100, disabled=True, key=f"assistant_{index}")
+# Display only the latest messages
+if st.session_state.messages:
+    # Get the last user message
+    latest_user_message = None
+    latest_assistant_message = None
+
+    for message in reversed(st.session_state.messages):
+        if message["role"] == "user" and latest_user_message is None:
+            latest_user_message = message
+        elif message["role"] == "assistant" and latest_assistant_message is None:
+            latest_assistant_message = message
+        
+        if latest_user_message and latest_assistant_message:
+            break
+    
+    # Display the last user question
+    if latest_user_message:
+        st.text_area("Question", value=latest_user_message["content"], height=75, disabled=True)
+    
+    # Display the last assistant answer
+    if latest_assistant_message:
+        st.text_area("Answer", value=latest_assistant_message["content"], height=100, disabled=True)
 
 if __name__ == "__main__":
     main()
