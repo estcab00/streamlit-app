@@ -6,10 +6,6 @@ from dotenv import load_dotenv
 import re  
 from openai import OpenAI
 
-client = OpenAI(
-  api_key=os.environ['openai_key'],  # this is also the default, it can be omitted
-)
-
 # Configuración de Streamlit
 st.set_page_config(page_title="Chatbot 💬", layout="centered")
 
