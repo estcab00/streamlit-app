@@ -21,8 +21,6 @@ project_2_page = st.Page(
     )   
 
 # --- NAVIGATION ---
-# pg = st.navigation(pages=[about_page, project_1_page, project_2_page])
-
 pg = st.navigation(
     {
         "Info" : [about_page],

@@ -3,8 +3,7 @@ import streamlit as st
 import re
 import requests
 
-WEBHOOK_URL = "https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjUwNTY0MDYzZTA0MzE1MjY0NTUzMzUxMzIi_pc"
-
+WEBHOOK_URL = st.secrets["WEBHOOK_URL"]
 def is_valid_email(email):
     # Basic regex pattern for email validation
     email_pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
