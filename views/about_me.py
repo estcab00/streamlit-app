@@ -1,23 +1,40 @@
 import streamlit as st
+import base64
 from forms.contact import show_contact_form
 
 @st.dialog("Contact me")
 def show_contact_dialog():
     show_contact_form()
 
+# --- SOCIAL ICONS ---
+social_icons_data = {
+    # Platform: [URL, Icon]
+    "LinkedIn": ["https://www.linkedin.com/in/esteban-cabrera-bonilla/", "https://cdn-icons-png.flaticon.com/512/174/174857.png"],
+    "GitHub": ["https://github.com/estcab00", "https://icon-library.com/images/github-icon-white/github-icon-white-6.jpg"],
+    "Twitter": ["https://x.com/estebanscabrera", "https://cdn-icons-png.flaticon.com/512/733/733579.png"],
+}
+
+social_icons_html = [f"<a href='{social_icons_data[platform][0]}' target='_blank' style='margin-right: 10px;'><img class='social-icon' src='{social_icons_data[platform][1]}' alt='{platform}' style='width: 40px; height: 40px;'></a>" for platform in social_icons_data]
+
 
 # --- HERO SECTION ---
 col1, col2 = st.columns(2, gap="small", vertical_alignment="center")
 with col1:
-    st.image("assets/esteban.jpg", width=200)
+    st.image("assets/esteban.jpg", width=250)
 with col2:
     st.title("Esteban Cabrera", anchor=False)
     st.subheader("Economist and Data Scientist")
     st.write(
         "Junior Data Scientist and Research Assistant at PUCP"
     )
-    if st.button("✉ Contact me"):
-        show_contact_form()
+    st.write(f"""
+    <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+        {''.join(social_icons_html)}
+    </div>""", unsafe_allow_html=True)
+    
+# PDF CV file
+with open("assets/CV_Esteban_Cabrera.pdf", "rb") as pdf_file:
+    pdf_bytes = pdf_file.read()
 
 # --- ABOUT ME ---
 st.write("\n")
@@ -28,6 +45,18 @@ st.write(
     For this reason, throughtout my life, I have participated in various volunteering activities, regarding different Sustainable Development Goals (SGDs). 
     I have experience in data analysis, machine learning, and econometrics. I'm passionate about using data to solve complex problems and make informed decisions.
     """
+)
+
+# --- DOWNLOAD CV ---
+if st.button("✉ Contact me"):
+   show_contact_form()
+
+# Download CV button
+st.download_button(
+    label="📄 Download my CV",
+    data=pdf_bytes,
+    file_name="CV_Esteban_Cabrera.pdf",
+    mime="application/pdf",
 )
 
 # --- SKILLS ---

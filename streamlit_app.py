@@ -31,8 +31,6 @@ pg = st.navigation(
 # --- RUN NAVIGATION ---
 pg.run()
 
-
-
 # --- SIDEBAR ---
 st.logo("assets/logo.png")
 st.sidebar.text("Made by @estebanscabrera")
