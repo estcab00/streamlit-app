@@ -1,12 +1,10 @@
 import streamlit as st
+from forms.contact import show_contact_form
 
 @st.dialog("Contact me")
-def show_contact_form():
-    st.text_input("First Name")
-    st.text_input("Last Name")
-    st.text_input("Email")
-    st.text_area("Message")
-    st.button("Submit")
+def show_contact_dialog():
+    show_contact_form()
+
 
 # --- HERO SECTION ---
 col1, col2 = st.columns(2, gap="small", vertical_alignment="center")
