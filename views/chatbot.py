@@ -23,7 +23,7 @@ with st.sidebar:
 
 load_dotenv()
 
-# Asegúrate de que esta definición esté antes de su llamada
+# Define load_chunks_from_json function
 def load_chunks_from_json(input_file='data/docs_chunks.json'):
     with open(input_file, 'r', encoding='utf-8') as f:
         docs_chunks = json.load(f)
@@ -104,7 +104,6 @@ for index, message in enumerate(st.session_state.messages):
         st.text_area("Question", value=message["content"], height=75, disabled=True, key=f"user_{index}")
     elif message["role"] == "assistant":  # Ensure this is an 'elif' to check specifically for "assistant" role
         st.text_area("Answer", value=message["content"], height=100, disabled=True, key=f"assistant_{index}")
-
 
 if __name__ == "__main__":
     main()
