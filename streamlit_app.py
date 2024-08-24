@@ -5,14 +5,14 @@ import streamlit as st
 about_page = st.Page(
     page="views/about_me.py",
     title="About Me",
-    icon="👩‍💻",
+    icon="🏠",
     default=True,
 )
 
 project_1_page = st.Page(
-    page="views/sales_dashboard.py",
-    title="Sales dashboard",
-    icon="📊",
+    page="views/webscrapper.py",
+    title="Web Scrapper",
+    icon="💻",
 )
 
 project_2_page = st.Page(

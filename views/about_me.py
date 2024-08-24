@@ -78,7 +78,7 @@ st.subheader("Education")
 st.write(
     """
     - **Bachelor's degree in Economics** - Pontifical Catholic University of Peru (PUCP)
-    - **Data Science and Machine Learning Bootcamp** - Ironhack
+    - **Winter School of Economics** - University of Chile
     """
 )
 
@@ -88,8 +88,8 @@ st.subheader("Experience")
 st.write(
     """
     - **Junior Data Scientist and Research Assistant** - PUCP
-    - **Data Analyst Intern** - Ironhack
-    - **Economic Research Assistant** - PUCP
+    - **Economic Research Assistant** - CIUP
+    - **Risk Analyst Intern** - BCP
     """
 )
 
@@ -98,7 +98,7 @@ st.write("\n")
 st.subheader("Projects")
 st.write(
     """
-    - **Sales dashboard:** A dashboard that visualizes sales data using Streamlit and Plotly.
-    - **Chatbot:** A chatbot that answers questions about COVID-19 using the Rasa framework.
+    - **Webscrapper:** A webscrapper of prices of different webpages.
+    - **Chatbot:** A chatbot that answers questions about economic and social issues in Peru.
     """
 )
