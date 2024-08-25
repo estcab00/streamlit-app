@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import re  
 from openai import OpenAI
 
-# Configuración de Streamlit
+# Streamlit configuration
 st.set_page_config(page_title="Chatbot 💬", layout="centered")
 
 with st.sidebar:

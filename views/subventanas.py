@@ -1,7 +1,16 @@
 import streamlit as st
 from views.scrappers import scraper_buscalibre
 
-st.title("Webscrapper")
+# Streamlit configuration
+st.set_page_config(page_title="Webscrapping 💻", layout="centered")
+
+with st.sidebar:
+    st.title('Webscrapping 💻')
+    st.markdown('''
+    ## About this page
+    This projet shows three different webscrapping applications. You can click on the buttons to use each one.
+                ''')
+
 
 # Three columns
 col1, col2, col3 = st.columns(3)
