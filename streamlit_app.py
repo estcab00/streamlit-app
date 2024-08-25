@@ -19,13 +19,20 @@ project_2_page = st.Page(
     page="views/chatbot.py",
     title="Chatbot",
     icon="💬"
+    )
+
+project_3_page = st.Page(
+    page="views/subventanas.py",
+    title="Subventanas",
+    icon="💬"
     )   
+
 
 # --- NAVIGATION ---
 pg = st.navigation(
     {
         "Info" : [about_page],
-        "Projects" : [project_1_page, project_2_page]
+        "Projects" : [project_1_page, project_2_page, project_3_page]
     }
 )
 
