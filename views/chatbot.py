@@ -12,7 +12,7 @@ st.set_page_config(page_title="Chatbot 💬", layout="centered")
 with st.sidebar:
     st.title('Interactive Chatbot')
     st.markdown('''
-    ## About this bot
+    ## About this project
     This is a chatbot that allows you to talk about the economic, political and social situation of Peru.
     The PDFs are loaded in this database: https://drive.google.com/drive/folders/1jvad9cFABAtXFTRwkjMPiwqVM1uQx9zC?usp=sharing
                 ''')

@@ -16,7 +16,7 @@ def scraper_buscalibre(user_input):
     # Verify response status
     if response.status_code == 200:
         soup = bs(response.text, "html.parser")
-        st.write(f"Has buscado el tema '{user_input}'")
+        st.write(f"You have searched for '{user_input}'")
 
         # Store information in lists
         titles = []
@@ -67,3 +67,5 @@ def scraper_buscalibre(user_input):
     
     else:
         st.error(f"Error {response.status_code}: Could not access the website")
+
+

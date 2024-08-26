@@ -2,12 +2,12 @@ import streamlit as st
 from views.scrappers import scraper_buscalibre
 
 # Streamlit configuration
-st.set_page_config(page_title="Webscrapping 💻", layout="centered")
+st.set_page_config(page_title="Webscrapper 💻", layout="centered")
 
 with st.sidebar:
-    st.title('Webscrapping 💻')
+    st.title('Webscrapper 💻')
     st.markdown('''
-    ## About this page
+    ## About this project
     This projet shows three different webscrapping applications. You can click on the buttons to use each one.
                 ''')
 
@@ -32,7 +32,8 @@ if 'current_view' not in st.session_state:
 
 # Buscalibre
 if st.session_state.current_view == "Buscalibre":
-    st.subheader("Webscrapping Buscalibre")
+    st.subheader("Scrapping Buscalibre 📚")
+    st.write("This scrapper finds all books regarding an author/topic and presents them in a dataframe. ")
 
     user_input = st.text_input("What topic/author are you interested in?")
 
